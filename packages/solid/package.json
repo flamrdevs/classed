@@ -1,0 +1,58 @@
+{
+  "name": "@classed/solid",
+  "version": "0.0.0",
+  "description": "Classed components for Solid",
+  "keywords": [
+    "class",
+    "classname",
+    "utility",
+    "typescript",
+    "solid",
+    "component"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flamrdevs/classed.git"
+  },
+  "author": "flamrdevs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flamrdevs/classed/issues"
+  },
+  "homepage": "https://classed.pages.dev",
+  "dependencies": {
+    "@classed/utils": "0.0.0"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.8.0"
+  },
+  "devDependencies": {
+    "solid-js": "^1.8.11"
+  }
+}
