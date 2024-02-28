@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { cx } from "./../src/index.ts";
+import { cx } from "./../src";
 
 describe("test", () => {
   it("works", () => {

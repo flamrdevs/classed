@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import clsx from "clsx";
 
-import classed, { create } from "./../src/index.tsx";
+import classed, { create } from "./../src";
 
 describe("test", () => {
   it("works", () => {
