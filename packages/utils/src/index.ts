@@ -1,6 +1,8 @@
 type CXLike = (...args: any[]) => string;
 
-const cx = ((...args: (string | false | null | undefined)[]) => {
+type ClassedClassValue = string | false | null | undefined;
+
+const cx = ((...args: ClassedClassValue[]): string => {
   let result = "",
     arg: any;
   for (arg of args) if (typeof arg === "string" && arg) result && (result += " "), (result += arg);

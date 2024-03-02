@@ -1,22 +1,51 @@
-import { describe, expect, it } from "vitest";
+import { describe, it } from "vitest";
 
-import clsx from "clsx";
+import * as expects from "./expects";
 
-import classed, { create } from "./../src";
+import { render } from "./testing-library";
 
-describe("test", () => {
-  it("works", () => {
-    const element = classed("div", "foo", "bar");
-    expect(element.type).toEqual("div");
-    expect(element.props.class).toEqual("foo bar");
+import { ClassedButton, ClassedButtonReactive, ClassedButtonSignalReactive } from "./index.test.utils";
+
+describe("ClassedButton", () => {
+  it("default", async () => {
+    const element = (
+      await render(
+        <ClassedButton data-testid="root" class="extra classes">
+          children
+        </ClassedButton>
+      )
+    ).getByTestId("root");
+
+    expects.element(element).tagName("BUTTON").className("button extra classes").textContent("children");
   });
 
-  describe("custom", () => {
-    it("works", () => {
-      const classed = create({ cx: clsx });
-      const element = classed("div", "foo", "bar");
-      expect(element.type).toEqual("div");
-      expect(element.props.class).toEqual("foo bar");
-    });
+  it("reactive", async () => {
+    const { getByTestId, fireEvent } = await render(<ClassedButtonReactive />);
+
+    let element = getByTestId("reactive");
+
+    expects.element(element).tagName("BUTTON").className("button extra classes");
+
+    await fireEvent.click(element);
+
+    expects
+      .element((element = getByTestId("reactive")))
+      .tagName("BUTTON")
+      .className("button extra classes reactive");
+  });
+
+  it("signal reactive", async () => {
+    const { getByTestId, fireEvent } = await render(<ClassedButtonSignalReactive />);
+
+    let element = getByTestId("reactive");
+
+    expects.element(element).tagName("BUTTON").className("button extra classes");
+
+    await fireEvent.click(element);
+
+    expects
+      .element((element = getByTestId("reactive")))
+      .tagName("BUTTON")
+      .className("button extra classes reactive");
   });
 });

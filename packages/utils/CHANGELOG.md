@@ -1,5 +1,11 @@
 # @classed/utils
 
+## 0.1.0
+
+### Minor Changes
+
+- prototype packages
+
 ## 0.0.0
 
 ### Major Changes

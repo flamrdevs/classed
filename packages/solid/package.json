@@ -1,6 +1,6 @@
 {
   "name": "@classed/solid",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Classed components for Solid",
   "keywords": [
     "class",
@@ -15,14 +15,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
@@ -47,7 +42,7 @@
   },
   "homepage": "https://classed.pages.dev",
   "dependencies": {
-    "@classed/utils": "0.0.0"
+    "@classed/utils": "0.1.0"
   },
   "peerDependencies": {
     "solid-js": "^1.8.0"
