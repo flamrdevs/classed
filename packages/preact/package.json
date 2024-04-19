@@ -45,9 +45,9 @@
     "@classed/utils": "0.1.0"
   },
   "peerDependencies": {
-    "preact": "^10.19.0"
+    "preact": "10.20.0 - 11.0.0"
   },
   "devDependencies": {
-    "preact": "^10.19.6"
+    "preact": "^10.20.2"
   }
 }

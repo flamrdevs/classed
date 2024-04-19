@@ -45,9 +45,9 @@
     "@classed/utils": "0.1.0"
   },
   "peerDependencies": {
-    "solid-js": "^1.8.0"
+    "solid-js": "1.8.0 - 2.0.0"
   },
   "devDependencies": {
-    "solid-js": "^1.8.11"
+    "solid-js": "^1.8.16"
   }
 }
