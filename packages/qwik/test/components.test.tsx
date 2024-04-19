@@ -8,7 +8,7 @@ import { render } from "./testing-library";
 
 import classed from "../src";
 
-import { A, Button, Div, RequiredA, RequiredButton, RequiredDiv } from "./components";
+import { A, Button, Div, A$, Button$, Div$, RequiredA, RequiredButton, RequiredDiv } from "./components";
 
 const PROPS = {
   "data-testid": "root",
@@ -30,6 +30,23 @@ describe("classed", () => {
   it("Div", async () => {
     const Component = classed(Div, "class");
     (await expect(<Component {...PROPS} />)).tagName("DIV");
+  });
+
+  describe("$", () => {
+    it("A", async () => {
+      const Component = classed(A$, "class");
+      (await expect(<Component {...PROPS} id="id" />)).tagName("A");
+    });
+
+    it("Button", async () => {
+      const Component = classed(Button$, "class");
+      (await expect(<Component {...PROPS} id="id" />)).tagName("BUTTON");
+    });
+
+    it("Div", async () => {
+      const Component = classed(Div$, "class");
+      (await expect(<Component {...PROPS} id="id" />)).tagName("DIV");
+    });
   });
 
   describe("required", () => {

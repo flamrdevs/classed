@@ -6,7 +6,7 @@ import * as expects from "./expects";
 
 import classed from "../src";
 
-import { A, Button, Div, RequiredA, RequiredButton, RequiredDiv, DefinedA, DefinedButton, DefinedDiv } from "./components";
+import { A, Button, Div, RequiredA, RequiredButton, RequiredDiv, DefinedA, DefinedButton, DefinedDiv, DefinedSetupFnA, DefinedSetupFnButton, DefinedSetupFnDiv } from "./components";
 
 const PROPS = {
   "data-testid": "root",
@@ -60,6 +60,23 @@ describe("classed", () => {
 
     it("Div", () => {
       const Component = classed(DefinedDiv, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("DIV");
+    });
+  });
+
+  describe("defined setup fn", () => {
+    it("A", () => {
+      const Component = classed(DefinedSetupFnA, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("A");
+    });
+
+    it("Button", () => {
+      const Component = classed(DefinedSetupFnButton, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("BUTTON");
+    });
+
+    it("Div", () => {
+      const Component = classed(DefinedSetupFnDiv, "class");
       expect(<Component {...PROPS} id="id" />).tagName("DIV");
     });
   });

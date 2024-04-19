@@ -8,7 +8,7 @@ import * as expects from "./expects";
 
 import classed from "../src";
 
-import { A, Button, Div, RequiredA, RequiredButton, RequiredDiv } from "./components";
+import { A, Button, Div, RequiredA, RequiredButton, RequiredDiv, ClassAWithoutRef, ClassButtonWithoutRef, ClassDivWithoutRef } from "./components";
 
 const PROPS = {
   "data-testid": "root",
@@ -30,6 +30,23 @@ describe("classed", () => {
   it("Div", () => {
     const Component = classed(Div, "class");
     expect(<Component {...PROPS} />).tagName("DIV");
+  });
+
+  describe("class without ref", () => {
+    it("A", () => {
+      const Component = classed(ClassAWithoutRef, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("A");
+    });
+
+    it("Button", () => {
+      const Component = classed(ClassButtonWithoutRef, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("BUTTON");
+    });
+
+    it("Div", () => {
+      const Component = classed(ClassDivWithoutRef, "class");
+      expect(<Component {...PROPS} id="id" />).tagName("DIV");
+    });
   });
 
   describe("required", () => {
