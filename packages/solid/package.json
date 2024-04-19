@@ -1,6 +1,6 @@
 {
   "name": "@classed/solid",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Classed components for Solid",
   "keywords": [
     "class",
@@ -42,7 +42,7 @@
   },
   "homepage": "https://classed.pages.dev",
   "dependencies": {
-    "@classed/utils": "0.1.0"
+    "@classed/utils": "0.2.0"
   },
   "peerDependencies": {
     "solid-js": "1.8.0 - 2.0.0"
