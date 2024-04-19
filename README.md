@@ -193,7 +193,7 @@ classed components
 ```tsx
 import classed from "@classed/{preact,qwik,react,solid,vue}";
 
-const Button = classed("button", "your button class");
+const Button = classed("button", "your", "button", "class");
 ```
 
 ## Authors

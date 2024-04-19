@@ -33,6 +33,44 @@ pnpm add @classed/solid
 bun add @classed/solid
 ```
 
+## Examples
+
+### basic
+
+with [classed utils cx](https://www.npmjs.com/package/@classed/utils)
+
+```tsx
+import classed from "@classed/solid";
+
+// components
+
+const Button = classed("button", "btn", "btn-primary", "btn-medium");
+
+// render
+
+<Button class={["extra", "class" /* any cx ClassedClassValue */]}>button</Button>;
+```
+
+### custom concatenation
+
+with [clsx](https://www.npmjs.com/package/clsx)
+
+```tsx
+import { create } from "@classed/solid";
+
+import clsx from "clsx";
+
+const classed = create({ cx: clsx });
+
+// components
+
+const Button = classed("button", "btn", "btn-primary", "btn-medium");
+
+// render
+
+<Button class={["extra", "class" /* any clsx ClassValue */]}>button</Button>;
+```
+
 ## Authors
 
 <p>
